@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sign in | Luminar</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" href="/luminar-preview/icon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/luminar-preview/app.css?v=12" />
+<script src="/luminar-preview/ui.js?v=2" defer></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 256 256"><path d="M136.68 0.549481C136.758 0.227082 137.046 0 137.378 0H237.714C254.047 0 267.288 13.6823 267.288 30.5603V149.206C267.288 166.084 254.047 179.766 237.714 179.766H94.234C93.7688 179.766 93.4263 179.331 93.5357 178.879L136.68 0.549481Z" transform="translate(-22.5 53) scale(0.834)"/></symbol></svg>
+<div class="auth">
+  <div class="auth-side">
+    <div class="slides" aria-hidden="true"><img src="/luminar-preview/img/luminar-signin-1.jpg" alt=""><img src="/luminar-preview/img/luminar-signin-2.jpg" alt=""><img src="/luminar-preview/img/luminar-signin-3.jpg" alt=""></div>
+    <a class="brand" href="/luminar-preview/"><svg class="mk" viewBox="0 0 256 256" aria-hidden="true"><use href="#mark"/></svg>Luminar</a>
+  </div>
+  <div class="auth-main">
+    <form class="auth-box" action="/luminar-preview/app" method="get">
+      <h2>Sign in to Luminar</h2>
+      <p class="sub">New here? Signing in creates your free account.</p>
+      <a class="google" href="/luminar-preview/app"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.6 5.4 2.6 13.3l7.8 6C12.3 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.1 5.3-4.6 7l7.2 5.6c4.2-3.9 7.1-9.7 7.1-17.1z"/><path fill="#FBBC05" d="M10.4 28.7A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.8-6A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.7l7.8-6z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.2-5.6c-2 1.4-4.6 2.2-8.7 2.2-6.3 0-11.7-4.1-13.6-9.8l-7.8 6C6.6 42.6 14.6 48 24 48z"/></svg>Continue with Google</a>
+      <div class="or">or</div>
+      <label class="field"><span>Email</span><input type="email" placeholder="you@example.com" autocomplete="email"></label>
+      <label class="field"><span>Password</span><input type="password" placeholder="At least 8 characters" autocomplete="current-password"></label>
+      <button class="btn btn-red" type="submit">Sign in with email</button>
+      <p class="swap">No account yet? <a href="/luminar-preview/app">Create an account</a></p>
+    </form>
+  </div>
+</div>
+<script>
+// start on a random picture, then fade to the next one every few seconds
+(() => {
+  const imgs = document.querySelectorAll(".slides img");
+  let i = Math.floor(Math.random() * imgs.length);
+  imgs[i].classList.add("on");
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  setInterval(() => {
+    imgs[i].classList.remove("on");
+    i = (i + 1) % imgs.length;
+    imgs[i].classList.add("on");
+  }, 5000);
+})();
+</script>
+
+</body>
+</html>
