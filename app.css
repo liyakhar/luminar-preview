@@ -269,3 +269,5 @@ label.set-row{cursor:pointer}
 .auto-note a{color:var(--ink-2)}
 .auto-note[hidden]{display:none}
 .tags i.c.auto::before{content:"✦ ";color:var(--ink-3)}
+.plan-note{max-width:720px;margin:-60px auto 100px;padding:0 clamp(16px,3vw,40px);text-align:center;font-size:14px;line-height:1.55;color:var(--ink-3)}
+.plans.in-app + .plan-note{margin:0 0 40px;padding:0;text-align:left}
